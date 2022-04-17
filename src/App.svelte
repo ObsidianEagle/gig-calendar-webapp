@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import ExternalLink from './ExternalLink.svelte';
 	import ListItem from './ListItem.svelte';
 	import LoadingSpinner from './LoadingSpinner.svelte';
 
@@ -35,6 +36,13 @@
 			<hr />
 		{/each}
 	{/if}
+	{#if loading}
+		<hr />
+	{/if}
+	<div class="external-links">
+		<ExternalLink label="Past gigs" subLabel="from setlist.fm" link="https://www.setlist.fm/concerts/alexking66" />
+		<ExternalLink label="Potential future gigs" subLabel="from SongKick" link="https://www.songkick.com/users/alex-king-47" />
+	</div>
 </main>
 
 <style>
@@ -50,5 +58,11 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
+	}
+
+	.external-links {
+		display: flex;
+		justify-content: center;
+		margin: 3rem 0;
 	}
 </style>
